@@ -1,0 +1,21 @@
+overlay()
+	.layer
+		background-color rgba(0,0,0, .9)
+	.overlay
+		transition .4s, background
+		position fixed
+		top 0
+		width 100%
+		left 0
+		height 100%
+		visibility hidden
+		opacity 0
+		@extend .layer
+
+	.overlay_show
+		opacity 1
+		visibility visible
+		z-index 6
+	
+	.body_hidden
+		overflow hidden

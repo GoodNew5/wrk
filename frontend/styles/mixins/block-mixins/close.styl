@@ -1,0 +1,25 @@
+
+close($width=20px, $height=2px, $display=block, $color=black)
+	$size = $height+$width
+	
+	display $display
+	position relative
+	padding ($size / 2) ($size*1)
+	cursor pointer
+	&:before,&:after
+		background-color $color
+		content ''
+		display block
+		top 0 
+		bottom 0
+		margin auto
+		left 0
+		right 0
+		position absolute
+		height $height
+		width $width
+
+	&:before
+		transform rotate(130deg)
+	&:after
+		transform rotate(-130deg)

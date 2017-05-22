@@ -1,0 +1,22 @@
+{
+  "name": "test",
+  "description": "test",
+  "main": "gulpfile.js",
+  "authors": [
+    "GoodNew5"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/GoodNew5/src",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "owl.carousel": "^2.2.1",
+    "select2": "^4.0.3"
+  }
+}

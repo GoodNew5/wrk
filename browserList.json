@@ -1,0 +1,16 @@
+{
+  "browserslist": {
+  	"production":[
+  	"last 2 versions",
+    "Firefox <= 20",
+    "ie 9", 
+    "ios 6", 
+    "iOS 7",
+    "last 2 Chrome versions",
+    "not ie <= 8"
+  	],
+  	"development":[
+  		"last 1 version"
+  	]
+  }
+}

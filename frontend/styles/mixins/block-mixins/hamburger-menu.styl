@@ -1,0 +1,17 @@
+button-hamburger($hamburgerColor)
+	.button-hamburger
+		height 40px
+		width 40px
+		@extend $positionFixed
+		{block}
+		@media({$phone})
+			display block
+		@media({$desk})
+			display none
+		&__line
+			width 40px
+			margin 5px auto 0 auto
+			height 5px
+			background-color $hamburgerColor
+			
+		

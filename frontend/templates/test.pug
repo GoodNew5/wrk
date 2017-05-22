@@ -1,0 +1,13 @@
+extends section/_layout
+block content
+	.button1.button.controller(data-target="#window") Войти
+	.button2.button Меню
+	#window.window
+		.close.controller(data-remove="#window")
+		p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore doloribus corporis culpa repellat vitae optio, voluptatum nemo atque, excepturi, asperiores accusantium accusamus earum fugiat alias, nobis suscipit eligendi. Blanditiis, numquam!
+	.close
+	select.select
+		option Нижний Новгород
+		option Казань
+		option Москва
+		option Санкт-Петербург

@@ -1,0 +1,27 @@
+.triangle {
+  width: 0;
+  height: 0;
+  border: 50px solid transparent;
+}
+.triangle_top {
+  border-bottom: 50px solid #000;
+}
+.triangle_bottom {
+  margin-top: 40px;
+  border-top: 50px solid #ff6347;
+}
+.triangle_right {
+  border-right: 50px solid #2980b9;
+}
+.triangle_left {
+  border-left: 50px solid;
+}
+.triangle-test {
+  margin-top: 50px;
+  width: 0;
+  height: 0;
+  border-top: 100px solid #ff6347;
+  border-bottom: 100px solid #2980b9;
+  border-left: 100px solid #ecf0f1;
+  border-right: 100px solid #e67e22;
+}
