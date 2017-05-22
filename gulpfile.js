@@ -177,7 +177,7 @@ gulp.task('watch',() =>{
       global.emittyChangedFile = filepath;
   });
 
-
+  gulp.watch('frontend/javascript/*.js').on('change', gulp.series('js', browserSync.reload));
   gulp.watch(['frontend/assets/images-content','frontend/assets/images']).on('add', gulp.series('image'));
   gulp.watch(['frontend/styles/**/*.{styl,svg}', 'lib/**/*.css'], gulp.series('styles'));
   gulp.watch(PATHS.iconsPic).on('add', gulp.series('sprites:raster'));
@@ -194,9 +194,12 @@ gulp.task('watch',() =>{
 
 
 
+gulp.task('js',function () {
+ return gulp.src('frontend/javascript/*.js')
+ .pipe(gulp.dest('public/js'));
+});
 
-
-gulp.task('build:pro', gulp.series('clean', gulp.parallel('image','style','templates','webpack:js'))); 
+gulp.task('build:pro', gulp.series('clean', gulp.parallel('image','style','templates','js'))); 
 
 
 
