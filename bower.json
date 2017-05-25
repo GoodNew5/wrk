@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "owl.carousel": "^2.2.1",
-    "select2": "^4.0.3"
+    "select2": "^4.0.3",
+    "normalize-css": "normalize.css#^7.0.0"
   }
 }

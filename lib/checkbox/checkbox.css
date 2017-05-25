@@ -27,7 +27,6 @@
   display: block;
   width: 16px;
   height: 16px;
-  background-image: url('checked.png');
   opacity: 0;
 }
 .checkbox-item__box-name {

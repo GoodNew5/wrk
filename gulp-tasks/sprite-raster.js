@@ -9,7 +9,7 @@ module.exports = function (gulp, $,isDevelopment,path,ifElse,gulpIf,PATHS) {
 	    cssName: 'sprites_raster.styl',
 	    imgPath: PATHS.sprite
 	  }))
-	  return spriteData.img.pipe(gulp.dest('public')),
+	  return spriteData.img.pipe(gulp.dest('public/css')),
 	    spriteData.css.pipe(gulp.dest(PATHS.stylesSprite))
 
 	};

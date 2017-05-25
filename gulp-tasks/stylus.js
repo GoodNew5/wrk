@@ -73,7 +73,7 @@ module.exports = function (gulp, $, isDevelopment,path,ifElse) {
         zindex: false
       })))
       .pipe(gulpIf(isDevelopment,$.sourcemaps.write()))
-      .pipe(gulp.dest('public'))
+      .pipe(gulp.dest('public/css'))
       .pipe(browserSync.stream());
     }
     

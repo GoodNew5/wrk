@@ -24,6 +24,6 @@ module.exports = function (gulp, $,isDevelopment,path,ifElse,gulpIf,PATHS,data,f
 	    .pipe($.debug({
 	      title: 'svg'
 	    }))
-	    .pipe(gulpIf('*.styl',gulp.dest("tmp/styles"), gulp.dest('public')))
+	    .pipe(gulpIf('*.styl',gulp.dest("tmp/styles"), gulp.dest('public/css')))
 	};
 }
