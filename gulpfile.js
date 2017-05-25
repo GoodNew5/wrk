@@ -25,8 +25,6 @@ isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development',
         destJs: 'public/js',
         tmp: 'tmp',
         dist: 'public'
-
-
       };
       var injectsPaths = {
              fileIncludes: 'frontend/templates/section/_mixins.pug',
