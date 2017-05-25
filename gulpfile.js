@@ -10,10 +10,6 @@ isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development',
       path = require('path'),
       browserSync = require('browser-sync').create(),
       strip = require('gulp-strip-comments'),
-      webpackStream = require('webpack-stream'),
-      webpack = webpackStream.webpack,
-      gulpWebpack = require('gulp-webpack'),
-      named = require('vinyl-named'),
       reload = browserSync.reload(),
       ExtractTextPlugin = require("extract-text-webpack-plugin"),
       WebpackNotifierPlugin = require('webpack-notifier');
@@ -42,6 +38,7 @@ isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development',
 
 
 gulp.task('styles', getTask('stylus'));
+gulp.task('bower', getTask('bower'));
 gulp.task('sprites:raster', getTask('sprite-raster'));
 gulp.task('sprites:svg', getTask('sprite-svg'));
 gulp.task('image', getTask('image'));
@@ -49,7 +46,7 @@ gulp.task('fontawesome', getTask('font-awesome'));
 gulp.task('templates', getTask('tmp'));
 gulp.task('serve', getTask('server'));
 gulp.task('clean', getTask('cleanPublic'));
-gulp.task('style', gulp.series('sprites:raster','sprites:svg','styles'))
+gulp.task('style', gulp.series('sprites:raster','sprites:svg','styles'));
 
 
 function getTask(task) {
@@ -71,100 +68,6 @@ function injectsComponents() {
   .pipe(gulp.dest(injectsPaths.fileIncludes))
   .pipe($.debug({title: 'injectsComponents'}))
 }
-
-
-
-
-
-function wrapRegexp(regexp, label) {
-  regexp.test = function(path) {
-    return RegExp.prototype.test.call(this, path);
-  };
-  return regexp;
-}
-
-
-
-gulp.task('webpack:js', function (callback) {
-  let firstBuildReady = false;
-
-  function done (err,stats) {
-     firstBuildReady = true;
-
-    if(err){
-      return 
-    }
-  }
- 
-  let options = {
-   output: {
-     publicPath: '/js/'
-   },
-    watch: true,
-    devtool: isDevelopment ? 'cheap-module-inline-source-map' : null,
-    resolve: {
-      root: [__dirname + '/vendor',__dirname + '/modules', __dirname + '/lib'],
-      alias: {
-        'owl.js': 'owl.carousel/dist/owl.carousel.js',
-        'owl.css': 'owl.carousel/dist/assets/owl.carousel.css',
-        'select.css': 'select2/dist/css/select2.css',
-        'select.js': 'select2/dist/js/select2.js'
-      }
-    },
-
-    module: {
-      loaders: [{
-        test: /\.js$/,
-        include: path.join(__dirname, "frontend"),
-        exclude: /\/node_modules\//,
-        loader: 'babel?presets[]=es2015'
-      },
-
-      {
-        test: /\.(png|jpg|svg|ttf|eot|woff|woff2|gif)$/,
-        loader: 'file?name=[path][name].[ext]'
-      },{
-        test:  /\.css$/,
-        loader: ExtractTextPlugin.extract('css')
-
-      },
-
-      ],
-      noParse: wrapRegexp(/\/node_modules\/[^!]+$/, 'noParse')
-    },
-    plugins: [
-      new webpack.optimize.CommonsChunkPlugin({
-        name: "common"
-      }),
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        "window.jQuery": "jquery"
-      }),
-      new ExtractTextPlugin('[name].css',{allChunks: true}),
-      
-      new WebpackNotifierPlugin({
-        title: 'Javascript',
-        contentImage: path.join(__dirname, 'gulp-tasks/notify/js_notify/javascript.jpg')
-      }),
-       new webpack.ResolverPlugin(
-            new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
-        )
-    ]
-    
-  };
-  return gulp.src(PATHS.javascriptSrc)
-    .pipe(named())
-    .pipe(gulpWebpack(options, null,done,webpack))
-   
-    .pipe(gulpIf(!isDevelopment,gulpIf('*.css', $.csso())))
-    .pipe(gulpIf('*.css', gulp.dest('public'),gulp.dest(PATHS.destJs)))
-    .on('data', function () {
-        if(firstBuildReady){
-          callback();
-        }
-    });
-  });
 
 
 
@@ -199,7 +102,7 @@ gulp.task('js',function () {
  .pipe(gulp.dest('public/js'));
 });
 
-gulp.task('build:pro', gulp.series('clean', gulp.parallel('image','style','templates','js'))); 
+gulp.task('build:pro', gulp.series('clean', gulp.parallel('image','style','templates','js','bower'))); 
 
 
 
@@ -212,50 +115,6 @@ gulp.task('dev',
 
 
 
-
-// gulp.task('webpack:pug',function (callback) {
-//   let firstBuildReady = false;
-
-//   function done (err,stats) {
-//      firstBuildReady = true;
-//      if(err){
-//        return 
-//      }
-
-//   }
-
-//   let options = {
-//     watch: true,
-//     module:{
-//       loaders:[
-//       {
-//         test: /\.pug$/, loaders: ['file-loader?name=[name].html','pug-html-loader?pretty&exports=false'],
-//         options: {
-//           doctype: 'htmldldldll'
-//         }
-//       },
-     
-//       ]
-//     },
-//     plugins: [
-//       new WebpackNotifierPlugin({
-//         title: 'Pug',
-//         contentImage: path.join(__dirname, 'notify/pug_notify/pug.jpg')
-//       })
-//     ]
-//   }
-
-//   return gulp.src('frontend/templates/*pug')
-//     .pipe(named())
-//     .pipe(gulpWebpack(options,null,done,webpack))
-//     .pipe($.replace('<!DOCTYPE html><!DOCTYPE js>', '<!DOCTYPE html>'))
-//     .pipe(gulpIf('*.html',gulp.dest('public')))
-//     .on('data', function () {
-//         if(firstBuildReady){
-//           callback();
-//         }
-//     });
-// });
 
 
 
