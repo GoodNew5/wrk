@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
 	head
 		meta(charset="UTF-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
-		block styles
 		link(rel="stylesheet", href="bower/owl.carousel/dist/assets/owl.carousel.css")
 		link(rel="stylesheet", href="css/styles.css")
 		block title
@@ -13,5 +12,4 @@ html(lang="en")
 		include _header
 		block content
 		.test
-		script(src="bower/jquery/dist/jquery.min.js")
-		script(src="js/main.js")
+		+scripts(["bower/jquery/dist/jquery.min.js", "js/main.js"])
