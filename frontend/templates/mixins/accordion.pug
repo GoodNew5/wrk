@@ -1,6 +1,6 @@
-mixin accordion
+mixin accordion($text='button')
 	.accordion__section
-		.accordion__btn.accordion__btn--js Кнопка аккордиона
+		.accordion__btn.accordion__btn--js=$text
 		.accordion__wrapper
 			.accordion__content
 				if block

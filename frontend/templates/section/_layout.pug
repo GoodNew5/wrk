@@ -1,16 +1,18 @@
+include _mixins
 <!DOCTYPE html>
 html(lang="ru")
 	head
-		meta(charset="UTF-8")
-		meta(name="viewport" content="width=device-width, initial-scale=1")
-		link(rel="stylesheet", href="bower/owl.carousel/dist/assets/owl.carousel.css")
-		link(rel="stylesheet", href="bower/normalize-css/normalize.css")
-		link(rel="stylesheet", href="css/styles.css")
+		include meta-standard
+		+styles([
+		"bower/normalize-css/normalize.css",
+		"bower/owl.carousel/dist/assets/owl.carousel.css",
+		"css/styles.css"
+		])
 		block title
 			title Главная
 	body
-		include _mixins
 		include _header
 		block content
-		.test
+		include _address
+		include _footer
 		+scripts(["bower/jquery/dist/jquery.min.js", "js/main.js"])
