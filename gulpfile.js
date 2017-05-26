@@ -10,9 +10,7 @@ isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development',
       path = require('path'),
       browserSync = require('browser-sync').create(),
       strip = require('gulp-strip-comments'),
-      reload = browserSync.reload(),
-      ExtractTextPlugin = require("extract-text-webpack-plugin"),
-      WebpackNotifierPlugin = require('webpack-notifier');
+      reload = browserSync.reload();
 
 
       var PATHS = {
