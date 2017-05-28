@@ -1,5 +1,5 @@
-mixin accordion($text='button')
-	.accordion__section
+mixin accordion($text='button', $active="")
+	.accordion__section(class=$active)
 		.accordion__btn.accordion__btn--js=$text
 		.accordion__wrapper
 			.accordion__content
