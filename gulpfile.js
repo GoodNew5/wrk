@@ -103,7 +103,7 @@ gulp.task('build:pro', gulp.series('clean', gulp.parallel('image','style','templ
 
 
 gulp.task('dev', 
-  gulp.series('build:pro', gulp.parallel('watch','serve'));
+  gulp.series('build:pro', gulp.parallel('watch','serve'))
 
 );
 
