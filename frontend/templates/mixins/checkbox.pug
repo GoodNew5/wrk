@@ -1,22 +1,7 @@
-mixin checkbox (checkbox,name,mod)
-  -var n = 0;
-  while n<checkbox
-    -var i = n++
+mixin checkbox(ch, mod)
+  -var i = 1
+  while i <= ch
+    -var j = i++
     .checkbox-item(class=mod)
-      input(type="checkbox" id='checkbox-'+i)
-      label(for='checkbox-'+i, class=name) 
-        span.checkbox-item__box
-        span.checkbox-item__box-name Чекбокс активный
-      if block 
-        block 
-
-mixin checkbox2 (checkbox,n,names,parentClass)
-  -var i = 1;
-  while i<=checkbox
-    -var j = i++;
-    -var a = n++
-    .checkbox-item(class=parentClass)
-      input(type="checkbox" id='checkbox-'+a)
-      label(for='checkbox-'+a, class=names) 
-        span.checkbox-item__box
-        span.checkbox-item__box-name Чекбокс активный
+      input(type="checkbox" id="checkbox-"+i)
+      label(for='checkbox-'+i) Чекбокс активный
