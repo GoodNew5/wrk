@@ -7,7 +7,7 @@ module.exports = function (gulp, $,isDevelopment,path,ifElse,gulpIf,PATHS,data,f
 	        css:{
 	          dest: '.',
 	          bust: false,
-	          sprite: 'sprite.svg',
+	          sprite: '../images/sprite.svg',
 	          dimensions: true,
 	          prefix: '$',
 	          render:{
@@ -24,6 +24,6 @@ module.exports = function (gulp, $,isDevelopment,path,ifElse,gulpIf,PATHS,data,f
 	    .pipe($.debug({
 	      title: 'svg'
 	    }))
-	    .pipe(gulpIf('*.styl',gulp.dest("tmp/styles"), gulp.dest('public/css')))
+	    .pipe(gulpIf('*.styl',gulp.dest("tmp/styles"), gulp.dest('public/images')))
 	};
 }
