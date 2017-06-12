@@ -7,18 +7,30 @@ module.exports = function (gulp, $,isDevelopment,path,ifElse,gulpIf,PATHS) {
     .pipe($.plumber())
     .pipe(gulpIf(!isDevelopment,
       $.image({
-        pngquant: true,
-        optipng: true,
-        zopflipng: false,
-        jpegRecompress: true,
-        jpegoptim: false,
-        mozjpeg: false,
-        gifsicle: true,
-        svgo: false,
-        concurrent: 10
+            pngquant: true,
+            optipng: false,
+            zopflipng: true,
+            jpegRecompress: false,
+            jpegoptim: true,
+            mozjpeg: true,
+            guetzli: false,
+            gifsicle: true,
+            svgo: true,
+            concurrent: 10
         })
       ))
     .pipe(gulp.dest(PATHS.dist))
   };
 
 }
+// pngquant: true,
+// optipng: true,
+// zopflipng: false,
+// jpegRecompress: true,
+// jpegoptim: false,
+// mozjpeg: false,
+// gifsicle: true,
+// svgo: false,
+// concurrent: 10
+
+

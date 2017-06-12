@@ -10,6 +10,7 @@ isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development',
       path = require('path'),
       browserSync = require('browser-sync').create(),
       strip = require('gulp-strip-comments'),
+      fontgen = require('gulp-fontgen'),
       reload = browserSync.reload();
 
 
@@ -18,6 +19,8 @@ isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development',
         stylesSprite: 'tmp/styles/',
         srcImagesContent: 'frontend/assets/images-content/**/*.*',
         iconsSvg: 'frontend/styles/icons/svg/**/*.svg',
+        fontsSrc: 'frontend/assets/fonts/*.{ttf,otf}',
+        destFonts: 'public/fonts',
         sprite: 'sprite.png',
         javascriptSrc: 'frontend/javascript/*.js',
         destJs: 'public/js',
@@ -50,6 +53,16 @@ function getTask(task) {
 }
 
 
+gulp.task('fontgen', function () {
+  return gulp.src(PATHS.fontsSrc, {base: PATHS.fontsSrc})
+  .pipe($.newer(PATHS.destFonts))
+  .pipe(fontgen({
+    dest: 'public/fonts',
+    css: false
+  }));
+
+});
+
 function injectsComponents() {
   var target = gulp.src(injectsPaths.fileIncludes,{base: injectsPaths.fileIncludes});
   return target.pipe($.inject(gulp.src(injectsPaths.components),{
@@ -78,6 +91,7 @@ gulp.task('watch',() =>{
 
   gulp.watch('frontend/javascript/*.js').on('change', gulp.series('js', browserSync.reload));
   gulp.watch(['frontend/assets/images-content','frontend/assets/images']).on('add', gulp.series('image'));
+  gulp.watch('frontend/assets/fonts', gulp.series('fontgen'));
   gulp.watch(['frontend/styles/**/*.{styl,svg}', 'lib/**/*.css'], gulp.series('styles'));
   gulp.watch(PATHS.iconsPic).on('add', gulp.series('sprites:raster'));
   gulp.watch(PATHS.iconsPic).on('unlink', gulp.series('sprites:raster'));
@@ -98,7 +112,7 @@ gulp.task('js',function () {
  .pipe(gulp.dest('public/js'));
 });
 
-gulp.task('build:pro', gulp.series('clean', gulp.parallel('image','style','templates','js','bower'))); 
+gulp.task('build:pro', gulp.series('clean', gulp.parallel('image', 'fontgen', 'style','templates','js','bower'))); 
 
 
 

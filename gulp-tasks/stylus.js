@@ -57,12 +57,9 @@ module.exports = function (gulp, $, isDevelopment,path,ifElse) {
         ],
          'include css': true,
          use: [
-            postStylus(ifElse(!isDevelopment, function () {
-              return  autoprefixer({browserslist: browsersList})
-            }, function () {
-              return false
-            }),
-            fontAwesomeStylus()
+            postStylus(
+              autoprefixer({browserslist: browsersList}),
+              fontAwesomeStylus()
           )]
       }))
       .pipe($.debug({title: 'stylus'}))
