@@ -6,21 +6,57 @@
 	margin unset
 	box-sizing border-box
 
+$inputBaseDisabledBorder = #D8D8D8
+$disabled = #D8D8D8
+
 html
 	font-size 14px
 html,body
 	height 100%
 a
-	display block
 	text-decoration none
-button
+
+button, input
 	outline none
 
 table
 	width 100%
 
 body
-	// 
+	overflow-y scroll 
+
+
+button
+	&:disabled
+		pointer-events none
+		box-shadow none
+		border none
+		&:before
+			position absolute
+			width 100%
+			height 100%
+			background-color alpha(white, .5)
+			content ''
+			left 0
+			top 0
+			display block
+
+
+
+input[type="text"]
+	&:disabled
+		background-color white
+		pointer-events none
+		border-color  $inputBaseDisabledBorder
+
+
+input[type=checkbox]:disabled + label, input[type=radio]:disabled + label
+	color $disabled
+	pointer-events none
+input[type=checkbox]:disabled + label:before, input[type=radio]:disabled + label:before
+	border-color $disabled
+
+
 
 .wrapper
 	@extend $margin-auto

@@ -16,9 +16,14 @@
     "tests"
   ],
   "dependencies": {
-    "owl.carousel": "^2.2.1",
-    "select2": "^4.0.3",
-    "normalize-css": "normalize.css#^7.0.0",
-    "remodal": "^1.1.1"
+   "owl.carousel": "^2.2.1",
+   "normalize-css": "normalize.css#^7.0.0",
+   "jquery-accordion": "*",
+   "jRange": "*",
+   "lightslider": "^1.1.6",
+   "easydropdown": "^2.1.4",
+   "remodal": "^1.1.1",
+   "responsive-tabs": "^1.6.2",
+   "device.js": "devicejs#^0.2.7"
   }
 }
