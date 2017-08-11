@@ -23,7 +23,7 @@ module.exports = function (gulp, $,isDevelopment,path,ifElse,gulpIf,PATHS,data,f
                );
           }))
           .pipe($.pug({
-            pretty: true,
+            pretty: '    ',
             basedir: __dirname + '../lib'
           }))
           .pipe(gulp.dest('public'))
