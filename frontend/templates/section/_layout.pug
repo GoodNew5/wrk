@@ -4,12 +4,13 @@ html(lang="ru")
 	head
 		include meta-standard
 		+styles([
-		"/bower/normalize-css/normalize.css",
-		"/bower/owl.carousel/dist/assets/owl.carousel.css",
-		"/bower/remodal/dist/remodal.css",
-		"/bower/remodal/dist/remodal-default-theme.css",
-		"/css/styles.css"
+		"bower/normalize-css/normalize.css",
+		"bower/easydropdown/themes/easydropdown.css",
+		"bower/ion.rangeSlider/css/ion.rangeSlider.css",
+		"bower/ion.rangeSlider/css/ion.rangeSlider.skinHTML5.css",
+		"css/styles.css"
 		])
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		block title
 			title Главная
 	body
@@ -18,9 +19,8 @@ html(lang="ru")
 		include _address
 		include _footer
 		+scripts([
-			"/bower/jquery/dist/jquery.min.js",
-			"/bower/owl.carousel/dist/owl.carousel.js", 
-			'/bower/device.js/lib/device.js',
-			"/bower/remodal/dist/remodal.js", 
-			"/js/main.js"
+			"bower/jquery/dist/jquery.min.js",
+			"bower/easydropdown/src/jquery.easydropdown.js",
+			"bower/ion.rangeSlider/js/ion.rangeSlider.js",
+			"js/main.js"
 		])

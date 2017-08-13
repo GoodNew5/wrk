@@ -1,0 +1,60 @@
+.dropdown
+	
+	&:hover
+		box-shadow none
+	width 100%
+	.selected
+		font-size 12px
+		white-space nowrap
+		text-overflow ellipsis
+		max-width 80%
+		overflow hidden
+		color #6C6C6E
+	&.open
+		.carat
+			border none
+			margin-top 0
+			transform rotate(-180deg)
+	.carat
+		fa(angle-down)
+		border none
+		font-size 18px
+		top 0
+		bottom 0
+		display flex
+		align-items center
+		
+	&--navbar
+		max-width 310px
+.dropdown.open
+	z-index 4
+.dropdown .selected, .dropdown li
+	padding 17px
+
+.dropdown 
+	li
+		white-space pre-wrap
+		line-height 25px
+		font-size 14px
+		&:hover
+			background-color $blue
+.navbar
+	height 50px
+	display flex
+	border-radius 5px
+	align-items center
+	border 1px $layouBorder solid
+	margin-bottom 16px
+	padding-right 23px
+	justify-content space-between
+	.dropdown
+		max-width 308px
+		padding-left 21px
+		border none
+		box-shadow none
+		.selected
+			height 48px
+			display flex
+			align-items center
+			padding 0
+			max-width 100%

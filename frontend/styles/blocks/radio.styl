@@ -1,0 +1,51 @@
+.radio
+	display flex
+	flex-wrap wrap
+.button-radio
+	display inline-flex
+	margin-bottom 12px
+	width 50%
+	position relative
+	label
+		display flex
+		width 100%
+		align-items center
+		cursor pointer
+	&__title
+		margin-left 15px
+	&__box
+		display flex
+		min-width 22px
+		position relative
+		height 22px
+		border 1px gray solid
+		border-radius 50%
+		content ''
+		align-items center
+		justify-content center
+		&:after
+			position absolute
+			flex-shrink 0
+			left 2px
+			right 2px
+			top 2px
+			bottom 2px
+			min-width 12px
+			min-height 12px
+			content ''
+			background-color $blue
+			border-radius 50%
+			display none
+	input
+		opacity 0
+		left 0
+		position absolute
+
+		
+	input:checked + label .button-radio__box
+		&:after
+			display block
+	
+
+
+

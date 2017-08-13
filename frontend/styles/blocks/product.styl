@@ -1,0 +1,52 @@
+
+$productNameColor = #1C3450
+$productPriceColor = #0B6AB4
+$productOldPrice = #AB9C92
+$redColor = #F54748
+
+.product
+	&-sticker
+		position absolute
+		top 27px 
+		left 0
+	&-name
+		color $productNameColor
+		margin-bottom 9px
+		
+	&-price
+		color $productPriceColor
+		display flex
+		justify-content space-between
+		align-items center
+		&--color-red
+			color $redColor
+	&-old-price
+		font-size 15px
+		color $productOldPrice
+	&-name, &-price
+		font-size 22px
+		text-transform uppercase
+	
+		line-height 20px
+		@extend $bold
+	&-img
+		min-height 96px
+		flex 1
+	&-list-prop
+		list-style none
+		display flex
+		flex-wrap wrap
+		margin-bottom 21px
+		margin-top 26px
+		&__item
+			width 50%
+			line-height 20px
+			padding-right 5px
+			font-size 12px
+			color $gray
+			&:nth-child(even)
+				text-align right
+				padding-right 0
+			&--bold
+				@extend $bold
+				color $productNameColor

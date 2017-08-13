@@ -1,0 +1,61 @@
+.button
+	border-radius 5px
+	color white
+	text-transform uppercase
+	font-size 15px
+	border none
+	line-height 20px
+	padding 15px 0
+	text-align center
+	cursor pointer
+	&--blue
+		@extend $bold
+		background-color $blue
+	&--card
+		display none
+		height 50px
+		top 0
+		bottom 28px
+		margin auto
+		left 30px
+		right 30px
+		position absolute
+	&--filters
+		width 100%
+.switch-layout-container
+	display flex
+.switch-on-columns
+	display flex
+	flex-direction column
+	min-width 20px
+	flex-wrap wrap
+	justify-content space-between
+	margin-right 10px
+	div
+		max-height 9px
+		min-height 9px
+		flex-shrink 0
+		max-width 9px
+		min-width 9px
+		border 2px gray solid
+	&.active
+		div
+			border-color $blue
+	
+.switch-on-columns, .switch-on-bars
+	min-height 21px
+	max-height 21px
+	cursor pointer
+.switch-on-bars
+	display flex
+	min-width 25px
+	flex-direction column
+	justify-content space-between
+	div
+		width 100%
+		min-height 2px
+		flex-shrink 0
+		background-color gray
+	&.active
+		div
+			background-color $blue

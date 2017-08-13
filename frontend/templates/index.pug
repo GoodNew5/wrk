@@ -1,2 +1,259 @@
 extends section/_layout
 block content
+	.wrapper
+		h1.heading-page Новые автомобили в наличии
+		.icon
+		span Выгодно в нашей компании
+		.layout.layout--space-top
+			aside.layout__sidebar
+				form.filters
+					select.dropdown
+						option Очень длинное слово слово
+						option Ещё одна
+						option Все модели
+					.filters__item 
+						.filter-title Цена
+						input#range(tabindex="-1")
+						.filter-cycle
+							span От
+							span До
+					.filters__item
+						.filter-title Коробка передач
+						.radio
+							.button-radio
+								input(type="radio" id="radio-1" name="radio")
+								label(for="radio-1") 
+									.button-radio__box
+									.button-radio__title Все
+							.button-radio
+								input(type="radio" id="radio-2" name="radio")
+								label(for="radio-2") 
+									.button-radio__box
+									.button-radio__title Механика
+							.button-radio
+								input(type="radio" id="radio-3" name="radio")
+								label(for="radio-3") 
+									.button-radio__box
+									.button-radio__title Автомат
+					.filters__item
+						.filter-title Тип двигателя
+						.radio
+							.button-radio
+								input(type="radio" id="radio-4" name="radio")
+								label(for="radio-4") 
+									.button-radio__box
+									.button-radio__title Все
+							.button-radio
+								input(type="radio" id="radio-5" name="radio")
+								label(for="radio-5") 
+									.button-radio__box
+									.button-radio__title Бензин
+							.button-radio
+								input(type="radio" id="radio-6" name="radio")
+								label(for="radio-6") 
+									.button-radio__box
+									.button-radio__title Дизель
+
+					button.button.button--blue.button--filters Применить
+							
+
+
+						
+			.layout__content.layout__content--space-left
+				.navbar
+					select.dropdown
+						option Упорядочить по цене (сначала дешевые)
+						option Ещё что-нибудь
+						option Ещё что-нибудь
+					.switch-layout-container
+						.switch-on-columns.active
+							div
+							div
+							div
+							div
+						.switch-on-bars
+							div
+							div
+							div
+				.cards-container
+					.cards-container__card
+						a.cards-container__link(href="")
+							.product-img
+								img(src="images-content/car.png", alt="")
+							.product-name Solaris Active
+							.product-price 517 904 Р
+							ul.product-list-prop
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold 2017 г.в
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold 4.8л 
+									| / 7.2л
+								li.product-list-prop__item
+									strong.product-list-prop__item--bold 100 л.с 
+									| (1,4 л)
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold АКПП 
+									| / 2WD
+						.cards-container__button-wrapper
+							a(href="").button.button--blue.button--card Забронировать
+					.cards-container__card
+						a.cards-container__link(href="")
+							.product-img
+								img(src="images-content/car.png", alt="")
+							.product-name Solaris Active
+							.product-price.product-price--color-red 517 904 Р
+								strike.product-old-price 1 517 000
+							ul.product-list-prop
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold 2017 г.в
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold 4.8л 
+									| / 7.2л
+								li.product-list-prop__item
+									strong.product-list-prop__item--bold 100 л.с 
+									| (1,4 л)
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold АКПП 
+									| / 2WD
+						.cards-container__button-wrapper
+							a(href="").button.button--blue.button--card Забронировать
+					.cards-container__card
+						a.cards-container__link(href="")
+							.product-img
+								img(src="images-content/car.png", alt="")
+							.product-name Solaris Active
+							.product-price 517 904 Р
+							ul.product-list-prop
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold 2017 г.в
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold 4.8л 
+									| / 7.2л
+								li.product-list-prop__item
+									strong.product-list-prop__item--bold 100 л.с 
+									| (1,4 л)
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold АКПП 
+									| / 2WD
+						.cards-container__button-wrapper
+							a(href="").button.button--blue.button--card Забронировать
+					.cards-container__card
+						a.cards-container__link(href="")
+							.product-img
+								img(src="images-content/car.png", alt="")
+							.product-name Solaris Active
+							.product-price 517 904 Р
+							ul.product-list-prop
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold 2017 г.в
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold 4.8л 
+									| / 7.2л
+								li.product-list-prop__item
+									strong.product-list-prop__item--bold 100 л.с 
+									| (1,4 л)
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold АКПП 
+									| / 2WD
+						.cards-container__button-wrapper
+							a(href="").button.button--blue.button--card Забронировать
+					.cards-container__card
+						a.cards-container__link(href="")
+							.product-img
+								img(src="images-content/car.png", alt="")
+							.product-name Solaris Active
+							.product-price 517 904 Р
+							ul.product-list-prop
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold 2017 г.в
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold 4.8л 
+									| / 7.2л
+								li.product-list-prop__item
+									strong.product-list-prop__item--bold 100 л.с 
+									| (1,4 л)
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold АКПП 
+									| / 2WD
+						.cards-container__button-wrapper
+							a(href="").button.button--blue.button--card Забронировать
+					.cards-container__card
+						a.cards-container__link(href="")
+							.product-img
+								img(src="images-content/car.png", alt="")
+							.product-name Solaris Active
+							.product-price 517 904 Р
+							ul.product-list-prop
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold 2017 г.в
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold 4.8л 
+									| / 7.2л
+								li.product-list-prop__item
+									strong.product-list-prop__item--bold 100 л.с 
+									| (1,4 л)
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold АКПП 
+									| / 2WD
+						.cards-container__button-wrapper
+							a(href="").button.button--blue.button--card Забронировать
+					.cards-container__card
+						a.cards-container__link(href="")
+							.product-img
+								img(src="images-content/car.png", alt="")
+							.product-name Solaris Active
+							.product-price 517 904 Р
+							ul.product-list-prop
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold 2017 г.в
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold 4.8л 
+									| / 7.2л
+								li.product-list-prop__item
+									strong.product-list-prop__item--bold 100 л.с 
+									| (1,4 л)
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold АКПП 
+									| / 2WD
+						.cards-container__button-wrapper
+							a(href="").button.button--blue.button--card Забронировать
+					.cards-container__card
+						a.cards-container__link(href="")
+							.product-img
+								img(src="images-content/car.png", alt="")
+							.product-name Solaris Active
+							.product-price 517 904 Р
+							ul.product-list-prop
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold 2017 г.в
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold 4.8л 
+									| / 7.2л
+								li.product-list-prop__item
+									strong.product-list-prop__item--bold 100 л.с 
+									| (1,4 л)
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold АКПП 
+									| / 2WD
+						.cards-container__button-wrapper
+							a(href="").button.button--blue.button--card Забронировать
+					.cards-container__card
+						a.cards-container__link(href="")
+							.product-img
+								img(src="images-content/car.png", alt="")
+							.product-name Solaris Active
+							.product-price 517 904 Р
+							ul.product-list-prop
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold 2017 г.в
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold 4.8л 
+									| / 7.2л
+								li.product-list-prop__item
+									strong.product-list-prop__item--bold 100 л.с 
+									| (1,4 л)
+								li.product-list-prop__item 
+									strong.product-list-prop__item--bold АКПП 
+									| / 2WD
+						.cards-container__button-wrapper
+							a(href="").button.button--blue.button--card Забронировать

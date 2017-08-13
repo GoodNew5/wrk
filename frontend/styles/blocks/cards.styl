@@ -1,0 +1,57 @@
+.cards-container
+	display flex
+	flex-wrap wrap
+	border 1px #EAF1F6 solid
+	border-radius 5px
+	border-bottom 0
+	margin-bottom 82px
+	&--bars
+		display block
+		.cards-container__card
+			width 100%
+	&__button-wrapper
+		background-color white
+		height 0
+		position absolute
+		top 100%
+		left 0
+		right 0
+		z-index 70
+		&:before
+			content ''
+			position absolute
+			pointer events none
+			left 0
+			display none
+			top -24px
+			height 50px
+			background-color white
+			right 0
+	&__card
+		width 33.3%
+		display flex
+		justify-content space-between
+		position relative
+		padding 24px 30px 0 30px
+		border-right 1px #EAF1F6 solid
+		border-bottom 1px #EAF1F6 solid
+
+		&:nth-of-type(3n)
+			border-right 0
+		&:hover
+			box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.3)
+			.cards-container__button-wrapper
+				height 80px
+				box-shadow 0 0 16px 0 rgba(0, 0, 0, 0.3)
+				&:before
+					display block
+			.button--card
+				display block
+				
+			
+	&__link
+		display flex
+		flex-direction column
+		justify-content space-between
+		position relative
+		
